@@ -1,0 +1,73 @@
+﻿<Window x:Class="PR4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR4"
+        mc:Ignorable="d"
+        Title="Калькулятор оценки" Height="400" Width="400"
+        FontFamily="Arial" FontSize="14">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Введите баллы по модулям:" FontSize="16" FontWeight="Bold" Grid.Row="0" Margin="0,0,0,10"/>
+
+        <!-- Модуль 1 -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,5">
+            <TextBlock Text="Модуль 1 (0–10):" Width="150"/>
+            <TextBox x:Name="TxtMod1" Width="80" MaxLength="2" PreviewTextInput="NumberValidationTextBox"/>
+        </StackPanel>
+        <TextBlock x:Name="ErrMod1" Grid.Row="2" Foreground="Red" Height="20"/>
+
+        <!-- Модуль 2 -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,0,0,5">
+            <TextBlock Text="Модуль 2 (0–15):" Width="150"/>
+            <TextBox x:Name="TxtMod2" Width="80" MaxLength="2" PreviewTextInput="NumberValidationTextBox"/>
+        </StackPanel>
+        <TextBlock x:Name="ErrMod2" Grid.Row="4" Foreground="Red" Height="20"/>
+
+        <!-- Модуль 3 -->
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="0,0,0,5">
+            <TextBlock Text="Модуль 3 (0–25):" Width="150"/>
+            <TextBox x:Name="TxtMod3" Width="80" MaxLength="2" PreviewTextInput="NumberValidationTextBox"/>
+        </StackPanel>
+        <TextBlock x:Name="ErrMod3" Grid.Row="6" Foreground="Red" Height="20"/>
+
+        <!-- Модуль 4 -->
+        <StackPanel Grid.Row="7" Orientation="Horizontal" Margin="0,0,0,5">
+            <TextBlock Text="Модуль 4 (0–25):" Width="150"/>
+            <TextBox x:Name="TxtMod4" Width="80" MaxLength="2" PreviewTextInput="NumberValidationTextBox"/>
+        </StackPanel>
+        <TextBlock x:Name="ErrMod4" Grid.Row="8" Foreground="Red" Height="20"/>
+
+        <!-- Модуль 5 -->
+        <StackPanel Grid.Row="9" Orientation="Horizontal" Margin="0,0,0,5">
+            <TextBlock Text="Модуль 5 (0–25):" Width="150"/>
+            <TextBox x:Name="TxtMod5" Width="80" MaxLength="2" PreviewTextInput="NumberValidationTextBox"/>
+        </StackPanel>
+        <TextBlock x:Name="ErrMod5" Grid.Row="10" Foreground="Red" Height="20"/>
+
+        <!-- Кнопка и результат -->
+        <Button Content="Рассчитать" Grid.Row="11" Width="120" Height="30" Margin="0,10" Click="BtnCalculate_Click"/>
+
+        <StackPanel Grid.Row="12" Margin="0,10">
+            <TextBlock x:Name="ResultSummary" FontWeight="Bold"/>
+            <TextBlock x:Name="ResultGrade" FontWeight="Bold" FontSize="16" Foreground="Blue"/>
+        </StackPanel>
+    </Grid>
+</Window>
